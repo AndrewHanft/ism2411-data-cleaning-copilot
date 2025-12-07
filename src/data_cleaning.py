@@ -56,7 +56,7 @@ def strip_whitespace(df: pd.DataFrame) -> pd.DataFrame:
 # ------------------------------------------------------
 def handle_missing_values(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
-    df = df.dropna(subset=["price", "quantity"])
+    df = df.dropna(subset=["price", "qty"])
     return df
 
 
@@ -67,7 +67,7 @@ def handle_missing_values(df: pd.DataFrame) -> pd.DataFrame:
 # ------------------------------------------------------
 def remove_invalid_rows(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
-    df = df[(df["price"] >= 0) & (df["quantity"] >= 0)]
+    df = df[(df["price"] >= 0) & (df["qty"] >= 0)]
     return df
 
 
